@@ -27,7 +27,7 @@ The R script reads unzipped Human Activity Recognition Using Smartphones data fi
 -  files **x_test.txt, subject_test, y_test** and **x_train.txt, subject_train, y_train** are saved in corresponding **/test** and **/train** subdirectories
 
 1.	While in the working directory read in **features** table and **activity labels** lookup vector.
-2.	First work with the test subset of the data.  
+2.	First work with the **test** subset of the data.  
 	- move in the **/test** subdirectory
 	- read the **X-test.txt** file in a data frame
 	- add the variable names using the **features** vector 
@@ -35,10 +35,10 @@ The R script reads unzipped Human Activity Recognition Using Smartphones data fi
 	- merge activity names, subjects (tests participants IDs), and limited data frame together
 3.	Saved results in R data file **HumanActivityRecognition.RDA** in the working directory.  To avoid memory problems all test specific data objects are removed.  
 
-Next the logic from the second step above is applied to the train data subset: 
+Next the logic from the second step above is applied to the **train** data subset: 
 	- move in the /train subdirectory
 	- read the **X-train.txt** file in a data frame
 	- etc.
-The train results are appended to the file **HumanActivityRecognition.RDA** created in step 3 above.  Again, all unnecessary data objects are removed.
+The **train** results are appended to the file **HumanActivityRecognition.RDA** created in step 3 above.  Again, all unnecessary data objects are removed.
 
 Finally to create text file for the **project step 5** I read the data set from my computer back into R and calculate average of each variable for each activity and each subject.  after deleting fileName variable that was storing source of the data, *test* versus *train*.  The **melt** function was applied to re-arrange data in accordance with the **tidy data pinciples**: one variable per column, with the variable names stored in the rows.  Resulting file contains 14,220 rows and 5 variables.  
